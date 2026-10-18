@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.content {
+  padding: 2rem;
+}
+
+h3 {
+  color: #0a66c2;
+}
+
+img {
+  border-radius: 50%;
+}

@@ -1,0 +1,14 @@
+<aside class="sidebar">
+  <h3>Contacto</h3>
+  <p>{{ ciudad }}</p>
+  <p>{{ telefono }}</p>
+  <p>{{ email }}</p>
+  <p>{{ github }}</p>
+
+  <h3>Idiomas</h3>
+  <ul>
+    @for (idioma of idiomas; track idioma) {
+      <li>{{ idioma }}</li>
+    }
+  </ul>
+</aside>
