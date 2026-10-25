@@ -12,4 +12,10 @@ export class AsideComponent {
   email = 'sergiore2007@gmail.com';
   github = 'github.com/SergioRE2007';
   idiomas = ['Español', 'Inglés'];
+
+  mostrarContacto = true;
+
+  cambiarContacto() {
+    this.mostrarContacto = !this.mostrarContacto;
+  }
 }

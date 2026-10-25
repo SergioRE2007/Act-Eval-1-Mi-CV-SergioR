@@ -12,3 +12,12 @@
 h3 {
   color: #0a66c2;
 }
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #0a66c2;
+  border-radius: 4px;
+  background-color: white;
+  color: #0a66c2;
+  cursor: pointer;
+}

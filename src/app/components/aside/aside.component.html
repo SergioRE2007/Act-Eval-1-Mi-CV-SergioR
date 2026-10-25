@@ -1,9 +1,13 @@
 <aside class="sidebar">
   <h3>Contacto</h3>
-  <p>{{ ciudad }}</p>
-  <p>{{ telefono }}</p>
-  <p>{{ email }}</p>
-  <p>{{ github }}</p>
+  <button (click)="cambiarContacto()">Mostrar / ocultar datos de contacto</button>
+
+  @if (mostrarContacto) {
+    <p>{{ ciudad }}</p>
+    <p>{{ telefono }}</p>
+    <p>{{ email }}</p>
+    <p>{{ github }}</p>
+  }
 
   <h3>Idiomas</h3>
   <ul>
