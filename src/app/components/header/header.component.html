@@ -1,0 +1,11 @@
+<header class="header">
+  <h1>{{ nombre }}</h1>
+  <h2>{{ profesion }}</h2>
+  <p>{{ frase }}</p>
+
+  <nav>
+    <button (click)="seleccionar('resumen')" [class.activo]="seccionActiva() === 'resumen'" [disabled]="seccionActiva() === 'resumen'">Resumen</button>
+    <button (click)="seleccionar('experiencia')" [class.activo]="seccionActiva() === 'experiencia'" [disabled]="seccionActiva() === 'experiencia'">Experiencia</button>
+    <button (click)="seleccionar('formacion')" [class.activo]="seccionActiva() === 'formacion'" [disabled]="seccionActiva() === 'formacion'">Formación</button>
+  </nav>
+</header>
