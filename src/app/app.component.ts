@@ -11,4 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'cv';
+  seccionActiva = 'resumen';
+
+  cambiarSeccion(seccion: string) {
+    this.seccionActiva = seccion;
+  }
 }

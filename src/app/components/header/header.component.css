@@ -7,3 +7,23 @@
   background-color: #0a66c2;
   color: white;
 }
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+button.activo {
+  background-color: white;
+  color: #0a66c2;
+  cursor: default;
+}

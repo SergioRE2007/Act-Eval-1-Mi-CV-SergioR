@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { AsideComponent } from '../aside/aside.component';
 import { MainComponent } from '../main/main.component';
 
@@ -9,5 +9,5 @@ import { MainComponent } from '../main/main.component';
   styleUrl: './main-layout.component.css'
 })
 export class MainLayoutComponent {
-
+  seccion = input<string>('resumen');
 }

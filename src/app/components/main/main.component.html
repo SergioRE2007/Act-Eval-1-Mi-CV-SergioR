@@ -1,28 +1,43 @@
 <main class="content">
 
-  <h3>Sobre mí</h3>
-  <img ngSrc="perfil.svg" width="100" height="100" alt="Foto de perfil">
-  <p>{{ sobreMi }}</p>
+  @switch (seccion()) {
+    @case ('resumen') {
+      <h3>Sobre mí</h3>
+      <img [ngSrc]="foto" width="100" height="100" [alt]="textoFoto">
+      <p>{{ sobreMi }}</p>
 
-  <h3>Experiencia profesional</h3>
-  @for (experiencia of experiencias; track experiencia.id) {
-    <h4>{{ experiencia.empresa }}</h4>
-    <p>{{ experiencia.puesto }} ({{ experiencia.periodo }})</p>
-    <p>{{ experiencia.descripcion }}</p>
+      <h3>Tecnologías</h3>
+      <div class="etiquetas">
+        @for (tecnologia of tecnologias; track tecnologia) {
+          <button class="etiqueta" [class.seleccionada]="tecnologia === tecnologiaSeleccionada" (click)="seleccionarTecnologia(tecnologia)">{{ tecnologia }}</button>
+        }
+      </div>
+
+      @if (tecnologiaSeleccionada) {
+        <p>Tecnología seleccionada: <strong>{{ tecnologiaSeleccionada }}</strong></p>
+      }
+    }
+    @case ('experiencia') {
+      <h3>Experiencia profesional</h3>
+      @for (experiencia of experiencias; track experiencia.id) {
+        <h4>{{ experiencia.empresa }}</h4>
+        <p>{{ experiencia.puesto }} ({{ experiencia.periodo }})</p>
+        <p>{{ experiencia.descripcion }}</p>
+      } @empty {
+        <p>Todavía no se ha añadido experiencia profesional.</p>
+      }
+    }
+    @case ('formacion') {
+      <h3>Formación</h3>
+      <ul>
+        @for (estudio of formacion; track estudio) {
+          <li>{{ estudio }}</li>
+        }
+      </ul>
+    }
+    @default {
+      <p>Sección no encontrada.</p>
+    }
   }
-
-  <h3>Formación</h3>
-  <ul>
-    @for (estudio of formacion; track estudio) {
-      <li>{{ estudio }}</li>
-    }
-  </ul>
-
-  <h3>Tecnologías</h3>
-  <ul>
-    @for (tecnologia of tecnologias; track tecnologia) {
-      <li>{{ tecnologia }}</li>
-    }
-  </ul>
 
 </main>
